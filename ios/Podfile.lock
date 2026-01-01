@@ -14,21 +14,21 @@ PODS:
     - React-Core
   - DoubleConversion (1.1.6)
   - fast_float (8.0.0)
+  - FBAEMKit (18.0.2):
+    - FBSDKCoreKit_Basics (= 18.0.2)
   - FBLazyVector (0.83.1)
-  - FBSDKCoreKit (8.2.0):
-    - FBSDKCoreKit/Basics (= 8.2.0)
-    - FBSDKCoreKit/Core (= 8.2.0)
-  - FBSDKCoreKit/Basics (8.2.0)
-  - FBSDKCoreKit/Core (8.2.0):
-    - FBSDKCoreKit/Basics
-  - FBSDKLoginKit (8.2.0):
-    - FBSDKLoginKit/Login (= 8.2.0)
-  - FBSDKLoginKit/Login (8.2.0):
-    - FBSDKCoreKit (~> 8.2.0)
-  - FBSDKShareKit (8.2.0):
-    - FBSDKShareKit/Share (= 8.2.0)
-  - FBSDKShareKit/Share (8.2.0):
-    - FBSDKCoreKit (~> 8.2.0)
+  - FBSDKCoreKit (18.0.2):
+    - FBAEMKit (= 18.0.2)
+    - FBSDKCoreKit_Basics (= 18.0.2)
+  - FBSDKCoreKit_Basics (18.0.2)
+  - FBSDKGamingServicesKit (18.0.2):
+    - FBSDKCoreKit (= 18.0.2)
+    - FBSDKCoreKit_Basics (= 18.0.2)
+    - FBSDKShareKit (= 18.0.2)
+  - FBSDKLoginKit (18.0.2):
+    - FBSDKCoreKit (= 18.0.2)
+  - FBSDKShareKit (18.0.2):
+    - FBSDKCoreKit (= 18.0.2)
   - fmt (11.0.2)
   - glog (0.3.5)
   - GoogleSignIn (9.0.0):
@@ -2028,20 +2028,21 @@ PODS:
     - React-RCTFBReactNativeSpec
     - ReactCommon/turbomodule/core
     - SocketRocket
-  - react-native-fbsdk (3.0.0):
-    - React
-    - react-native-fbsdk/Core (= 3.0.0)
-    - react-native-fbsdk/Login (= 3.0.0)
-    - react-native-fbsdk/Share (= 3.0.0)
-  - react-native-fbsdk/Core (3.0.0):
-    - FBSDKCoreKit (~> 8.1)
-    - React
-  - react-native-fbsdk/Login (3.0.0):
-    - FBSDKLoginKit (~> 8.1)
-    - React
-  - react-native-fbsdk/Share (3.0.0):
-    - FBSDKShareKit (~> 8.1)
-    - React
+  - react-native-fbsdk-next (13.4.1):
+    - React-Core
+    - react-native-fbsdk-next/Core (= 13.4.1)
+    - react-native-fbsdk-next/Login (= 13.4.1)
+    - react-native-fbsdk-next/Share (= 13.4.1)
+  - react-native-fbsdk-next/Core (13.4.1):
+    - FBSDKCoreKit (~> 18.0)
+    - React-Core
+  - react-native-fbsdk-next/Login (13.4.1):
+    - FBSDKLoginKit (~> 18.0)
+    - React-Core
+  - react-native-fbsdk-next/Share (13.4.1):
+    - FBSDKGamingServicesKit (~> 18.0)
+    - FBSDKShareKit (~> 18.0)
+    - React-Core
   - react-native-safe-area-context (5.6.2):
     - boost
     - DoubleConversion
@@ -3091,7 +3092,7 @@ DEPENDENCIES:
   - React-logger (from `../node_modules/react-native/ReactCommon/logger`)
   - React-Mapbuffer (from `../node_modules/react-native/ReactCommon`)
   - React-microtasksnativemodule (from `../node_modules/react-native/ReactCommon/react/nativemodule/microtasks`)
-  - react-native-fbsdk (from `../node_modules/react-native-fbsdk`)
+  - react-native-fbsdk-next (from `../node_modules/react-native-fbsdk-next`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
   - React-networking (from `../node_modules/react-native/ReactCommon/react/networking`)
@@ -3140,7 +3141,10 @@ SPEC REPOS:
   trunk:
     - AppAuth
     - AppCheckCore
+    - FBAEMKit
     - FBSDKCoreKit
+    - FBSDKCoreKit_Basics
+    - FBSDKGamingServicesKit
     - FBSDKLoginKit
     - FBSDKShareKit
     - GoogleSignIn
@@ -3248,8 +3252,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   React-microtasksnativemodule:
     :path: "../node_modules/react-native/ReactCommon/react/nativemodule/microtasks"
-  react-native-fbsdk:
-    :path: "../node_modules/react-native-fbsdk"
+  react-native-fbsdk-next:
+    :path: "../node_modules/react-native-fbsdk-next"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   React-NativeModulesApple:
@@ -3342,10 +3346,13 @@ SPEC CHECKSUMS:
   BVLinearGradient: cb006ba232a1f3e4f341bb62c42d1098c284da70
   DoubleConversion: cb417026b2400c8f53ae97020b2be961b59470cb
   fast_float: b32c788ed9c6a8c584d114d0047beda9664e7cc6
+  FBAEMKit: 56a4f5a9607957b547b6458b17a98c5bb2736367
   FBLazyVector: 309703e71d3f2f1ed7dc7889d58309c9d77a95a4
-  FBSDKCoreKit: 4afd6ff53d8133a433dbcda44451c9498f8c6ce4
-  FBSDKLoginKit: 7181765f2524d7ebf82d9629066c8e6caafc99d0
-  FBSDKShareKit: 0c0d51b3af47075a85ed9bea0e28b2fc70e3594b
+  FBSDKCoreKit: 54f1240567e16862ab71c53c33dc347db5c524c5
+  FBSDKCoreKit_Basics: eb530cd6a79030dbb11df460aafb2767bcad9028
+  FBSDKGamingServicesKit: a967e47b5cbf759fb3e42a87f11a999aa7c36b24
+  FBSDKLoginKit: 6a70798793e499335a98fab1a758d7da34af196e
+  FBSDKShareKit: e52c6b1584c77c708bcb4001c9a48223c115cbd9
   fmt: a40bb5bd0294ea969aaaba240a927bd33d878cdd
   glog: 5683914934d5b6e4240e497e0f4a3b42d1854183
   GoogleSignIn: c7f09cfbc85a1abf69187be091997c317cc33b77
@@ -3395,7 +3402,7 @@ SPEC CHECKSUMS:
   React-logger: b8483fa08e0d62e430c76d864309d90576ca2f68
   React-Mapbuffer: 7b72a669e94662359dad4f42b5af005eb24b4e83
   React-microtasksnativemodule: cdc02da075f2857803ed63f24f5f72fc40e094c0
-  react-native-fbsdk: 4e64dac4b47f61b830f0846cd6f78af5b9a7d552
+  react-native-fbsdk-next: 52f81e60eb3e8e0e06cf9728b4572d3509ca9d01
   react-native-safe-area-context: c00143b4823773bba23f2f19f85663ae89ceb460
   React-NativeModulesApple: a2c3d2cbec893956a5b3e4060322db2984fff75b
   React-networking: 3f98bd96893a294376e7e03730947a08d474c380

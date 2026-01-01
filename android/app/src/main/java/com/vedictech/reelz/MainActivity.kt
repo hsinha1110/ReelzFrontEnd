@@ -1,4 +1,4 @@
-package com.reelzapp
+package com.vedictech.reelz
 import android.os.Bundle
 import com.zoontek.rnbootsplash.RNBootSplash
 import com.facebook.react.ReactActivity

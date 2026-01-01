@@ -3,6 +3,7 @@ import React
 import React_RCTAppDelegate
 import ReactAppDependencyProvider
 import RNBootSplash
+import FBSDKCoreKit  
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -16,6 +17,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]? = nil
   ) -> Bool {
 
+    ApplicationDelegate.shared.application(
+      application,
+      didFinishLaunchingWithOptions: launchOptions
+    )
+
     let delegate = ReactNativeDelegate()
     let factory = RCTReactNativeFactory(delegate: delegate)
     delegate.dependencyProvider = RCTAppDependencyProvider()
@@ -26,12 +32,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     window = UIWindow(frame: UIScreen.main.bounds)
 
     factory.startReactNative(
-      withModuleName: "ReelzApp", // 👈 Apna App name
+      withModuleName: "ReelzApp",
       in: window,
       launchOptions: launchOptions
     )
 
     return true
+  }
+
+  // 🔑 Facebook URL handling
+  func application(
+    _ app: UIApplication,
+    open url: URL,
+    options: [UIApplication.OpenURLOptionsKey : Any] = [:]
+  ) -> Bool {
+    return ApplicationDelegate.shared.application(
+      app,
+      open: url,
+      options: options
+    )
   }
 }
 
@@ -50,7 +69,6 @@ class ReactNativeDelegate: RCTDefaultReactNativeFactoryDelegate {
 #endif
   }
 
-  // 🚀 BOOT SPLASH INITIALIZATION
   override func customize(_ rootView: RCTRootView) {
     super.customize(rootView)
     RNBootSplash.initWithStoryboard("BootSplash", rootView: rootView)

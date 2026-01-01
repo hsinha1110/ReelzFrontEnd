@@ -10,10 +10,12 @@ import { PersistGate } from 'redux-persist/integration/react';
 import BootSplash from 'react-native-bootsplash';
 
 GoogleSignin.configure({
-  webClientId: 'YOUR_GOOGLE_WEB_CLIENT_ID',
+  webClientId:
+    '1059349601516-ib2cqr5288pq5nm5idib8dfg3kr56776.apps.googleusercontent.com',
   forceCodeForRefreshToken: true,
   offlineAccess: false,
-  iosClientId: 'YOUR_GOOGLE_IOS_CLIENT_ID',
+  iosClientId:
+    '1059349601516-kttle5lphvp4j8dgfesjbc2c8ct0tmpf.apps.googleusercontent.com',
 });
 
 const App = () => {

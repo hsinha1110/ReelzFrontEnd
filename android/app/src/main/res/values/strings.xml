@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">ReelzApp</string>
+    <string name="facebook_app_id">896023276133907</string>
+    <string name="facebook_client_token">d887bdda245f1125473a3b4b7e1334e6</string>
+    <string name="fb_login_protocol_scheme">fb896023276133907</string>
 </resources>
