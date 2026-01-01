@@ -1,6 +1,20 @@
+import 'react-native-gesture-handler';
 import React, { useEffect } from 'react';
-import { View, Text } from 'react-native';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import Navigation from './src/navigation/Navigation';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { Platform, StatusBar } from 'react-native';
+import { Provider } from 'react-redux';
+import { persistor, store } from './src/redux/store';
+import { PersistGate } from 'redux-persist/integration/react';
 import BootSplash from 'react-native-bootsplash';
+
+GoogleSignin.configure({
+  webClientId: 'YOUR_GOOGLE_WEB_CLIENT_ID',
+  forceCodeForRefreshToken: true,
+  offlineAccess: false,
+  iosClientId: 'YOUR_GOOGLE_IOS_CLIENT_ID',
+});
 
 const App = () => {
   useEffect(() => {
@@ -8,14 +22,20 @@ const App = () => {
       await BootSplash.hide({ fade: true });
       console.log('BootSplash hidden');
     };
-
     hideSplash();
   }, []);
-
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>App</Text>
-    </View>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <StatusBar
+        translucent={Platform.OS === 'ios'}
+        backgroundColor="transparent"
+      />
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <Navigation />
+        </PersistGate>
+      </Provider>
+    </GestureHandlerRootView>
   );
 };
 
