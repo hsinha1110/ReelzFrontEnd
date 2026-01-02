@@ -2,8 +2,8 @@ import { Platform } from 'react-native';
 
 export const BASE_URL =
   Platform.OS === 'android'
-    ? 'http://10.0.2.2:3000'
-    : 'http://192.168.29.88:3000';
+    ? 'http://10.0.2.2:3000' // Android Emulator
+    : 'http://192.168.1.33:3000'; // iOS Simulator
 
 export interface ReplaceUrlData {
   [key: string]: string | number | undefined;
@@ -11,8 +11,7 @@ export interface ReplaceUrlData {
 
 // Service routes
 export const SERVICE_ROUTES = {
-  REGISTER: `${BASE_URL}/api/auth/register`,
-  LOGIN: `${BASE_URL}/api/auth/login`,
+  LOGIN: `${BASE_URL}/oauth/login`,
 } as const;
 
 // HTTP Methods

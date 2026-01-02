@@ -10,7 +10,6 @@ const SplashScreen: FC = () => {
   const scale = useRef(new Animated.Value(1)).current;
 
   useEffect(() => {
-    // 🔁 Breathing animation
     const breathingAnimation = Animated.loop(
       Animated.sequence([
         Animated.timing(scale, {
@@ -27,8 +26,6 @@ const SplashScreen: FC = () => {
     );
 
     breathingAnimation.start();
-
-    // ⏱ Redirect after 2 seconds
     const timer = setTimeout(() => {
       resetAndNavigate('LoginScreen');
     }, 2000);
